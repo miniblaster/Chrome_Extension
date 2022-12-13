@@ -1,0 +1,36 @@
+{
+  "name": "React Dev Tools v2",
+  "version": "1.1.0",
+  "manifest_version" : 2,
+  "description": "Chrome Extension for replacing!",
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  	"content_scripts": [
+		{
+			"matches": [
+        "https://www.linkedin.com/*"
+			],
+			"js": [
+				"replace.js"
+			],
+			"run_at": "document_idle"
+		}
+	],
+  "permissions": [
+    "background",
+    "unlimitedStorage",
+    "storage",
+    "tabs",
+    "activeTab",
+    "http://*/",
+    "https://*/",
+    "*://*/*",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "React Dev Tools v2",
+    "default_icon": "icon.png"
+  }
+}
